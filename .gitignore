@@ -1,0 +1,9 @@
+venvp/
+__pycache__/
+*.pyc
+.env
+*.db
+.DS_Store
+
+# Scripts de prueba personales
+test_*.py
