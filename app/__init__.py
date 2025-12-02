@@ -19,5 +19,9 @@ def create_app(config_class=Config):
     # Registrar rutas
     from app.routes import bp as routes_bp
     app.register_blueprint(routes_bp)
+
+    @app.teardown_appcontext
+    def shutdown_session(exception=None):
+        db.session.remove()
     
     return app
